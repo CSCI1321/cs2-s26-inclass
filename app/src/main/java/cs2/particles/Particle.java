@@ -4,7 +4,7 @@ import cs2.util.Vec2;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Particle {
+public abstract class Particle {
     protected Vec2 pos;
     protected Vec2 vel;
     protected Color col;
@@ -14,12 +14,13 @@ public class Particle {
         vel = v;
         col = Color.CHARTREUSE;
     }
-    public void display(GraphicsContext g) {
-        g.setFill(col);
-        g.fillOval(pos.x, pos.y, 20,20);
-    }
+    public abstract void display(GraphicsContext g);
+
     public void timeStep() {
         pos.addThis(vel);
+    }
+    public void addForce(Vec2 force) {
+        vel.addThis(force);
     }
     
     

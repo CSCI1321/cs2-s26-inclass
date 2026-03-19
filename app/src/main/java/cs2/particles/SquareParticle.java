@@ -8,7 +8,8 @@ public class SquareParticle extends Particle {
         super(o,v);
     }
 
-    public void displaySquare(GraphicsContext g) {
+    @Override
+    public void display(GraphicsContext g) {
         g.setFill(col);
         g.fillRect(pos.x, pos.y, 20,20);
     }

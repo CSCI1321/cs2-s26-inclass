@@ -34,11 +34,13 @@ public class ParticleSystemApp extends Application {
             wind = new Vec2(e.getX() / 600 * 2 -1,0);
         });
         
+        Background bg = new Background(new RainbowColor());//new SolidColor(Color.BLACK));
+
         AnimationTimer timer = new AnimationTimer() {
             public void handle(long t) {
-                g.setFill(Color.WHITE);
-                g.fillRect(0,0, 600,600);
-
+                // g.setFill(Color.WHITE);
+                // g.fillRect(0,0, 600,600);
+                bg.display(g);
                 for(ParticleSystem p : plist) {
                     p.addParticle();
                     p.display(g);

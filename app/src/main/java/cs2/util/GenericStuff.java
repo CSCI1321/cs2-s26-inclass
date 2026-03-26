@@ -21,13 +21,15 @@ public class GenericStuff {
     }
 
     public static void main(String[] args) {
-        Integer[] a = {1,2,3,4,5};
-        System.out.println(a);
-        //System.out.println(arrayToArrayList(a));
-        String[] s = {"Hello","there","you"};
-        System.out.println(s);
+        Float[] a = {1f,2f,3f,4f,5f,2f,7f,1f,-3f};
+        //System.out.println(a);
+        System.out.println(arrayToListGeneric(a));
+        //String[] s = {"Hello","there","you"};
+        //System.out.println(s);
         //System.out.println(arrayToArrayList(s));
-        System.out.println(arrayToListGeneric(s));
+        //System.out.println(arrayToListGeneric(s));
+        //System.out.println(arrayToListGeneric(a));
+        bubbleSortGeneric(a);
         System.out.println(arrayToListGeneric(a));
     }
 

@@ -14,7 +14,8 @@ public class TextAnalysis {
 
     public static void main(String[] args) {
         try {
-            File fin = new File("file:tempest.txt");
+            File fin = new File("tempest.txt");
+            System.out.println(fin.getPath());
             System.out.println(fin.canRead());
             Scanner scan = new Scanner(fin);
 

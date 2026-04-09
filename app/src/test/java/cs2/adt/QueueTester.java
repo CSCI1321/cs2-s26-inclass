@@ -35,8 +35,7 @@ public class QueueTester {
      */
     @BeforeEach
     void init() {
-        //TODO: change this to create an instance of the tested implementation of Queue
-        //q = new ArrayQueue<Integer>();
+        q = new LinkedQueue<Integer>();
     }
 
     // -----------------------------------------------------------------------

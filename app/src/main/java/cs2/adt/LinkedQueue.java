@@ -18,13 +18,23 @@ public class LinkedQueue<T> extends Queue<T> {
     }
 
     public void enqueue(T item) {
-        last.next = new Node(item, null);
-        last = last.next;
+        if(last == null) {
+            head = new Node(item, null);
+            last = head;
+        } else {
+            last.next = new Node(item, null);
+            last = last.next;
+        }
     }
     public T dequeue() {
         if(isEmpty()) throw new NoSuchElementException();
         T tmp = head.data;
-        head = head.next;
+        if(head == last) {
+            head = null;
+            last = null;
+        } else {
+            head = head.next;
+        }
         return tmp;
     }
     public T peek() {

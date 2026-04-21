@@ -8,7 +8,14 @@ public class App {
         return "Hello World!";
     }
 
+    public static void printNumbers(int... nums) {
+        for (int num : nums) {
+            System.out.println(num);
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        printNumbers(1, 2, 3, 4, 5);
     }
 }

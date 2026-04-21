@@ -9,42 +9,51 @@ public class LinkedList<T> extends List<T> {
         }
     }
     
-    private Node head, last;
+    private Node end;
+    private int size;
 
     public LinkedList() {
-        head = null;
-        last = null;
+        end = new Node(null, end, end);
+        end.prev = end;
+        end.next = end;
+        size = 0;
     }
 
     public T get(int idx) {
-        Node rover = head;
+        if(idx < 0 || idx >= size) { throw new IndexOutOfBoundsException(); }
+        Node rover = end.next;
         for(int i=0; i<idx; i++) {
             rover = rover.next;
         }
         return rover.data;
     }
     public void set(int idx, T item) {
-        Node rover = head;
+        if(idx < 0 || idx >= size) { throw new IndexOutOfBoundsException(); }
+        Node rover = end.next;
         for(int i=0; i<idx; i++) {
             rover = rover.next;
         }
         rover.data = item;
     }
     public void insert(int idx, T item) {
-        Node rover = head;
-        for(int i=0; i<idx-1; i++) {
+        if(idx < 0 || idx > size) { throw new IndexOutOfBoundsException(); }
+        Node rover = end;
+        for(int i=0; i<idx; i++) {
             rover = rover.next;
         }
         rover.next = new Node(item, rover, rover.next);
         rover.next.next.prev = rover.next;
+        size++;
     }
     public void remove(int idx) {
-        Node rover = head;
+        if(idx < 0 || idx >= size) { throw new IndexOutOfBoundsException(); }
+        Node rover = end.next;
         for(int i=0; i<idx; i++) {
             rover = rover.next;
         }
         rover.prev.next = rover.next;
         rover.next.prev = rover.prev;
+        size--;
     }
 
 

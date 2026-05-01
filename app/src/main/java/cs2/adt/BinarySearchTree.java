@@ -100,6 +100,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    private void helperRecur(Node current) {
+        System.out.println(current.data);
+        if(current.left != null) helperRecur(current.left);
+        if(current.right != null) helperRecur(current.right);
+    }
+
+    public void printTree() {
+        if(root != null) helperRecur(root);
+    }
+
+
     /*
     public void insert(T item) {
         Node current = root;
